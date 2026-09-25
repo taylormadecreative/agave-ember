@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agave &amp; Ember · Mexican Cuisine in Allen, Texas</title>
+<meta name="description" content="Elevated Mexican cuisine in Allen, Texas. Every sauce made from scratch, gluten-free choices across the menu, and weekend brunch. Reserve a table at Agave & Ember.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1d1410">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Agave & Ember · Mexican Cuisine">
+<meta property="og:description" content="Made from scratch, served like family. Village at Allen Twin Creeks, Allen, Texas.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600&family=Gloock&family=Marcellus+SC&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/logo-full.webp">
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    var d = document.documentElement, skip = false;
+    d.classList.add('js');
+    try { skip = sessionStorage.getItem('ae-intro') === '1'; } catch (e) {}
+    if (skip || document.hidden || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      d.classList.add('no-intro');
+    } else {
+      try { sessionStorage.setItem('ae-intro', '1'); } catch (e) {}
+      setTimeout(function () { d.classList.add('intro-done'); }, 2300);
+    }
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Agave & Ember Mexican Cuisine",
+  "servesCuisine": "Mexican",
+  "acceptsReservations": "True",
+  "email": "Managers@agave-ember.com",
+  "url": "https://agave-ember.com/",
+  "image": "img/og.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "960 W Exchange Pkwy, Suite 150",
+    "addressLocality": "Allen",
+    "addressRegion": "TX",
+    "postalCode": "75013",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "11:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "23:59" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "21:00" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#reserve">Skip to reservations</a>
+
+<!-- Intro: decorative, ends on a timer, never gates content -->
+<div class="intro" aria-hidden="true">
+  <canvas class="intro-embers"></canvas>
+  <img class="intro-logo" src="img/logo-full.webp" alt="" width="840" height="730">
+</div>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="Agave &amp; Ember, back to top">
+    <img src="img/logo-wordmark.webp" alt="Agave &amp; Ember Mexican Cuisine" width="640" height="155">
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#story">Our story</a>
+    <a href="#menu">Menu</a>
+    <a href="#brunch">Brunch</a>
+    <a href="#visit">Hours &amp; location</a>
+  </nav>
+  <a class="btn btn-gold btn-sm" href="#reserve">Reserve a table</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas class="hero-embers" aria-hidden="true"></canvas>
+    <div class="hero-grid wrap">
+      <div class="hero-copy">
+        <p class="kicker hero-in" style="--d:0">Mexican cuisine · Allen, Texas</p>
+        <h1 id="hero-title" class="hero-in" style="--d:1">Made from scratch, <span class="gold">served like family.</span></h1>
+        <p class="lead hero-in" style="--d:2">Elevated Mexican cooking in north Allen. Every sauce is made in our kitchen from scratch, with gluten-free options and brunch every weekend.</p>
+        <div class="hero-actions hero-in" style="--d:3">
+          <a class="btn btn-gold" href="#reserve">Reserve a table</a>
+          <a class="btn btn-line" href="#menu">See the menu</a>
+        </div>
+        <p class="open-line hero-in" style="--d:4"><span data-open-line>Open seven days a week</span> · <a class="addr-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=960+W+Exchange+Pkwy+Suite+150+Allen+TX+75013" target="_blank" rel="noopener">960 W Exchange Pkwy</a></p>
+      </div>
+      <figure class="hero-media">
+        <img class="hero-main" src="img/crema-enchiladas.webp" srcset="img/crema-enchiladas-sm.webp 900w, img/crema-enchiladas.webp 1800w" sizes="(max-width: 860px) 100vw, 60vw" alt="Enchiladas in chipotle cream with red rice, refried beans and fresh herbs" width="1800" height="1242" fetchpriority="high">
+        <img class="hero-inset" src="img/guacamole-sm.webp" alt="Guacamole with red onion on a small white plate" width="891" height="900" loading="lazy">
+        <figcaption>Enchiladas en crema de chipotle</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <h2 id="story-title" class="story-title rv">Agave endures. <span>An ember keeps the fire.</span></h2>
+      <dl class="meaning">
+        <div class="rv">
+          <dt>Agave</dt>
+          <dd>A plant that thrives where little else can. It gives us tequila, mezcal and nectar, and it stands for strength and resilience.</dd>
+        </div>
+        <div class="rv">
+          <dt>Ember</dt>
+          <dd>The glow left after the fire. Small, but it still holds heat and can light the next one. It stands for passion that lasts.</dd>
+        </div>
+      </dl>
+      <figure class="story-photo">
+        <img src="img/shrimp-crema.webp" srcset="img/shrimp-crema-sm.webp 900w, img/shrimp-crema.webp 1800w" sizes="(max-width: 860px) 100vw, 55vw" alt="Camarones a la crema on spinach with white rice and grilled red peppers" width="1800" height="1053" loading="lazy">
+      </figure>
+      <div class="story-body">
+        <p class="rv">Together, that is the kitchen we set out to build. Sauces made by hand, recipes that hold on, and a dining room where the whole family can slow down.</p>
+        <blockquote class="rv">
+          <p>“A higher scale Mexican restaurant, where you can come and feel like you’re home.”</p>
+          <footer>Blanca Basinger, owner</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATES -->
+  <section class="plates" aria-labelledby="plates-title">
+    <div class="wrap">
+      <div class="plates-head">
+        <h2 id="plates-title" class="rv">From our kitchen</h2>
+        <p class="rv">A first look at the plates. Every sauce on them starts from scratch in our kitchen.</p>
+      </div>
+      <div class="plate-grid">
+        <figure class="plate p1">
+          <div class="frame"><img src="img/poblano-steak-sm.webp" srcset="img/poblano-steak-sm.webp 661w, img/poblano-steak.webp 1322w" sizes="(max-width: 860px) 92vw, 34vw" alt="Seared steak in spinach and poblano cream with grilled vegetables and rice" width="661" height="900" loading="lazy"></div>
+          <figcaption><strong>Crema poblana</strong> Spinach and poblano cream, grilled vegetables</figcaption>
+        </figure>
+        <figure class="plate p2">
+          <div class="frame"><img src="img/red-enchiladas-sm.webp" srcset="img/red-enchiladas-sm.webp 900w, img/red-enchiladas.webp 1800w" sizes="(max-width: 860px) 92vw, 42vw" alt="Enchiladas rojas topped with melted cheese, with red rice and refried beans" width="900" height="567" loading="lazy"></div>
+          <figcaption><strong>Enchiladas rojas</strong> Red chile sauce, melted cheese, arroz y frijoles</figcaption>
+        </figure>
+        <figure class="plate p3">
+          <div class="frame"><img src="img/diabla-sm.webp" srcset="img/diabla-sm.webp 724w, img/diabla.webp 1449w" sizes="(max-width: 860px) 92vw, 26vw" alt="Camarones a la diabla in red chile sauce on spinach with rice" width="724" height="900" loading="lazy"></div>
+          <figcaption><strong>Camarones a la diabla</strong> Fiery red chile sauce, spinach, rice</figcaption>
+        </figure>
+        <figure class="plate p4">
+          <div class="frame"><img src="img/pescado-sm.webp" srcset="img/pescado-sm.webp 785w, img/pescado.webp 1569w" sizes="(max-width: 860px) 92vw, 26vw" alt="White fish under sautéed zucchini, peppers and red onion with rice" width="785" height="900" loading="lazy"></div>
+          <figcaption><strong>Pescado a la plancha</strong> Zucchini, peppers, red onion, cilantro</figcaption>
+        </figure>
+        <div class="sauces rv">
+          <p class="sauces-label">Sauces you’ll taste</p>
+          <ul>
+            <li>Roja</li>
+            <li>Diabla</li>
+            <li>Crema de chipotle</li>
+            <li>Crema poblana</li>
+          </ul>
+          <a class="text-link" href="#menu">Browse the full menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="menu-card">
+        <div class="menu-head">
+          <h2 id="menu-title">The menu</h2>
+          <p class="menu-note">A preview of our menu. Dishes and prices may change. <span class="gf">GF</span> gluten-free</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Menu">
+          <button role="tab" id="tab-dinner" aria-controls="panel-dinner" aria-selected="true">Lunch &amp; dinner</button>
+          <button role="tab" id="tab-brunch" aria-controls="panel-brunch" aria-selected="false" tabindex="-1">Brunch</button>
+          <button role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="false" tabindex="-1">Drinks</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-dinner" aria-labelledby="tab-dinner" tabindex="0">
+          <div class="menu-cols">
+            <section class="course">
+              <h3>Para empezar</h3>
+              <ul>
+                <li><span class="dish">Guacamole de la casa <span class="gf">GF</span></span><span class="price">12</span><p>Hass avocado, red onion, lime, serrano. Made to order.</p></li>
+                <li><span class="dish">Queso fundido</span><span class="price">13</span><p>Melted Chihuahua cheese, roasted rajas, warm tortillas.</p></li>
+                <li><span class="dish">Ceviche de camarón <span class="gf">GF</span></span><span class="price">16</span><p>Shrimp cured in lime, cucumber, avocado, tostadas.</p></li>
+                <li><span class="dish">Esquites <span class="gf">GF</span></span><span class="price">9</span><p>Roasted corn, crema, cotija, chile and lime.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>Enchiladas</h3>
+              <p class="course-note">With red rice and refried beans</p>
+              <ul>
+                <li><span class="dish">Enchiladas rojas</span><span class="price">18</span><p>Shredded chicken, house guajillo sauce, melted cheese.</p></li>
+                <li><span class="dish">Enchiladas en crema de chipotle</span><span class="price">19</span><p>Chicken, smoky chipotle cream, fresh herbs.</p></li>
+                <li><span class="dish">Enchiladas verdes</span><span class="price">18</span><p>Tomatillo and serrano salsa, crema, queso fresco.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>Del mar</h3>
+              <ul>
+                <li><span class="dish">Camarones a la crema <span class="gf">GF</span></span><span class="price">24</span><p>Shrimp in chipotle cream over spinach, white rice, grilled peppers.</p></li>
+                <li><span class="dish">Camarones a la diabla <span class="gf">GF</span></span><span class="price">24</span><p>Shrimp in fiery red chile sauce, spinach, rice, roasted carrots.</p></li>
+                <li><span class="dish">Pescado a la plancha <span class="gf">GF</span></span><span class="price">26</span><p>Griddled white fish, zucchini, peppers, red onion, cilantro rice.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>De la casa</h3>
+              <ul>
+                <li><span class="dish">Crema poblana <span class="gf">GF</span></span><span class="price">24 / 28</span><p>Chicken or steak in spinach and poblano cream, grilled vegetables, rice.</p></li>
+                <li><span class="dish">Fajitas Agave &amp; Ember</span><span class="price">22 / 28</span><p>Chicken, steak or shrimp with peppers, onions, guacamole and tortillas.</p></li>
+                <li><span class="dish">Carne asada</span><span class="price">29</span><p>Grilled marinated steak, rajas, charro beans, handmade tortillas.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>Postres</h3>
+              <ul>
+                <li><span class="dish">Flan de la casa <span class="gf">GF</span></span><span class="price">9</span><p>Vanilla custard, burnt caramel.</p></li>
+                <li><span class="dish">Tres leches</span><span class="price">10</span><p>Sponge cake soaked in three milks, fresh berries.</p></li>
+                <li><span class="dish">Churros con cajeta</span><span class="price">9</span><p>Cinnamon sugar, goat’s milk caramel for dipping.</p></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-brunch" aria-labelledby="tab-brunch" tabindex="0" hidden>
+          <p class="panel-note">Saturday and Sunday from 9 AM</p>
+          <div class="menu-cols">
+            <section class="course">
+              <h3>Brunch plates</h3>
+              <ul>
+                <li><span class="dish">Pollo y waffles</span><span class="price">17</span><p>Crispy chicken, golden waffle, fresh fruit, piloncillo syrup.</p></li>
+                <li><span class="dish">Pan francés con cajeta</span><span class="price">15</span><p>Thick-cut French toast, banana, strawberries, cajeta caramel.</p></li>
+                <li><span class="dish">Omelette ranchero <span class="gf">GF</span></span><span class="price">15</span><p>Cheddar omelette, refried beans, roasted potatoes and peppers.</p></li>
+                <li><span class="dish">Chilaquiles rojos o verdes</span><span class="price">15</span><p>Crisp tortillas in salsa, two eggs any style, crema, queso fresco.</p></li>
+                <li><span class="dish">Huevos rancheros <span class="gf">GF</span></span><span class="price">14</span><p>Fried eggs on corn tortillas, ranchera sauce, beans.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>On the side</h3>
+              <ul>
+                <li><span class="dish">Fruta de temporada <span class="gf">GF</span></span><span class="price">7</span><p>Melon, berries, fresh mint.</p></li>
+                <li><span class="dish">Papas asadas <span class="gf">GF</span></span><span class="price">6</span><p>Roasted potatoes, peppers, herbs.</p></li>
+                <li><span class="dish">Frijoles refritos <span class="gf">GF</span></span><span class="price">5</span><p>Refried beans, cotija.</p></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" tabindex="0" hidden>
+          <div class="menu-cols">
+            <section class="course">
+              <h3>Sin alcohol</h3>
+              <ul>
+                <li><span class="dish">Aguas frescas</span><span class="price">5</span><p>Horchata, jamaica, or the flavor of the day.</p></li>
+                <li><span class="dish">Café de olla</span><span class="price">5</span><p>Coffee brewed with cinnamon and piloncillo.</p></li>
+                <li><span class="dish">Limonada</span><span class="price">5</span><p>Fresh-squeezed, still or sparkling.</p></li>
+                <li><span class="dish">Mexican Coca-Cola</span><span class="price">4</span><p>In the glass bottle.</p></li>
+              </ul>
+            </section>
+            <section class="course">
+              <h3>Agave</h3>
+              <ul>
+                <li><span class="dish">Margarita de la casa</span><span class="price">12</span><p>Blanco tequila, fresh lime, agave nectar.</p></li>
+                <li><span class="dish">Paloma de mezcal</span><span class="price">13</span><p>Mezcal, grapefruit, lime, salt.</p></li>
+                <li><span class="dish">Ember margarita</span><span class="price">13</span><p>Jalapeño-infused tequila, lime, chile salt rim.</p></li>
+                <li><span class="dish">Michelada</span><span class="price">10</span><p>Mexican lager, lime, house chile mix.</p></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRUNCH -->
+  <section class="brunch" id="brunch" aria-labelledby="brunch-title">
+    <div class="wrap brunch-grid">
+      <div class="brunch-copy">
+        <h2 id="brunch-title" class="rv">Weekend brunch</h2>
+        <p class="brunch-when rv">Saturday and Sunday from 9 AM</p>
+        <p class="rv">Chicken and waffles, French toast with cajeta, omelettes with refried beans. Come hungry and bring the whole family.</p>
+        <div class="rv brunch-actions">
+          <a class="btn btn-ink" href="#reserve" data-reserve-weekend>Book brunch</a>
+          <a class="text-link ink" href="#menu" data-open-tab="tab-brunch">See the brunch menu</a>
+        </div>
+      </div>
+      <div class="brunch-media">
+        <img class="b1" src="img/waffles-sm.webp" srcset="img/waffles-sm.webp 900w, img/waffles.webp 1800w" sizes="(max-width: 860px) 80vw, 36vw" alt="Chicken and waffles with a cup of fresh melon and berries" width="900" height="675" loading="lazy">
+        <img class="b2" src="img/french-toast-sm.webp" alt="French toast with banana, strawberries and caramel" width="759" height="900" loading="lazy">
+        <img class="b3" src="img/omelette-sm.webp" alt="Cheddar omelette with refried beans and roasted potatoes" width="900" height="816" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE -->
+  <section class="reserve" id="reserve" aria-labelledby="reserve-title">
+    <div class="wrap reserve-grid">
+      <div class="reserve-intro">
+        <h2 id="reserve-title" class="rv">Reserve a table</h2>
+        <p class="rv">Pick a day and a time. We’ll email you to confirm.</p>
+        <p class="rv small">Parties of 9 or more, private events and celebrations: <a href="mailto:Managers@agave-ember.com?subject=Large%20party%20at%20Agave%20%26%20Ember">managers@agave-ember.com</a></p>
+      </div>
+
+      <form class="booking" id="booking" novalidate>
+        <div class="booking-steps">
+          <fieldset class="field">
+            <legend>Guests</legend>
+            <div class="party" role="radiogroup" aria-label="Number of guests" data-party></div>
+            <p class="hint" data-party-hint hidden>For 9 or more, email <a href="mailto:Managers@agave-ember.com?subject=Large%20party%20at%20Agave%20%26%20Ember">managers@agave-ember.com</a> and we’ll set up the room for you.</p>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Date</legend>
+            <div class="dates" data-dates role="radiogroup" aria-label="Date"></div>
+            <label class="other-date">Another date <input type="date" data-date-input></label>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>Time <span class="legend-note" data-time-note></span></legend>
+            <div class="times" data-times role="radiogroup" aria-label="Time"></div>
+          </fieldset>
+        </div>
+
+        <div class="booking-details">
+          <div class="summary" data-summary aria-live="polite">Choose a date and time</div>
+          <div class="row2">
+            <label class="input">Full name<input name="name" autocomplete="name" required></label>
+            <label class="input">Phone<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required></label>
+          </div>
+          <label class="input">Email<input name="email" type="email" autocomplete="email" required></label>
+          <label class="input">Occasion
+            <select name="occasion">
+              <option value="">None</option>
+              <option>Birthday</option>
+              <option>Anniversary</option>
+              <option>Date night</option>
+              <option>Business meal</option>
+              <option>Family celebration</option>
+            </select>
+          </label>
+          <label class="input">Allergies or requests<textarea name="notes" rows="2" placeholder="Gluten-free, high chair, a quiet table..."></textarea></label>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="form-error" data-error role="alert" hidden></p>
+          <button class="btn btn-gold btn-block" type="submit" data-submit>Send my request</button>
+        </div>
+
+        <div class="booking-done" data-done hidden tabindex="-1">
+          <h3 data-done-title>Request sent</h3>
+          <p data-done-body></p>
+          <div class="done-actions">
+            <button type="button" class="btn btn-line" data-ics>Add to calendar</button>
+            <button type="button" class="text-link" data-again>Make another reservation</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap visit-grid">
+      <div class="hours">
+        <h2 id="visit-title" class="rv">Hours</h2>
+        <p class="open-big" data-open-big>Open seven days a week</p>
+        <table class="hours-table">
+          <caption class="sr">Opening hours</caption>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>11 AM to 9 PM</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>11 AM to 9 PM</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>11 AM to 9 PM</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>11 AM to 9 PM</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>11 AM to 11 PM</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>9 AM to midnight</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>9 AM to 9 PM</td></tr>
+          </tbody>
+        </table>
+        <p class="small">Friday and Saturday, the kitchen closes at 10 PM. Brunch is served Saturday and Sunday from 9 AM.</p>
+      </div>
+
+      <div class="find">
+        <h2 class="rv">Find us</h2>
+        <address>
+          <span class="addr-big">960 W Exchange Pkwy<br>Suite 150</span>
+          Allen, Texas 75013
+        </address>
+        <p>In the Village at Allen Twin Creeks, near Exchange Parkway and Watters Road.</p>
+        <div class="find-actions">
+          <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=960+W+Exchange+Pkwy+Suite+150+Allen+TX+75013" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-line" href="https://maps.apple.com/?daddr=960+W+Exchange+Pkwy+Suite+150,+Allen,+TX+75013" target="_blank" rel="noopener">Apple Maps</a>
+        </div>
+        <p class="contact">Questions, large parties and events<br><a href="mailto:Managers@agave-ember.com">managers@agave-ember.com</a></p>
+        <div class="map">
+          <iframe title="Map to Agave &amp; Ember, 960 W Exchange Pkwy, Allen, Texas" src="https://www.google.com/maps?q=960+W+Exchange+Pkwy+Suite+150,+Allen,+TX+75013&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <img class="footer-logo" src="img/logo-full.webp" alt="Agave &amp; Ember Mexican Cuisine" width="840" height="730" loading="lazy">
+    <div>
+      <p class="f-label">Visit</p>
+      <p>960 W Exchange Pkwy, Suite 150<br>Allen, Texas 75013</p>
+    </div>
+    <div>
+      <p class="f-label">Hours</p>
+      <p>Mon to Thu 11 AM to 9 PM<br>Fri 11 AM to 11 PM<br>Sat 9 AM to midnight<br>Sun 9 AM to 9 PM</p>
+    </div>
+    <div>
+      <p class="f-label">Contact</p>
+      <p><a href="mailto:Managers@agave-ember.com">managers@agave-ember.com</a></p>
+      <p><a href="#reserve">Reserve a table</a></p>
+    </div>
+  </div>
+  <p class="wrap copyright">© 2026 Agave &amp; Ember Mexican Cuisine · Allen, Texas</p>
+</footer>
+
+<nav class="dock" aria-label="Quick actions">
+  <a href="#menu">Menu</a>
+  <a href="#visit">Hours</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=960+W+Exchange+Pkwy+Suite+150+Allen+TX+75013" target="_blank" rel="noopener">Directions</a>
+  <a class="dock-cta" href="#reserve">Reserve</a>
+</nav>
+
+<script src="app.js" defer></script>
+</body>
+</html>
