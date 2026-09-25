@@ -77,7 +77,7 @@
     <a href="#brunch">Brunch</a>
     <a href="#visit">Hours &amp; location</a>
   </nav>
-  <a class="btn btn-gold btn-sm" href="#reserve">Reserve a table</a>
+  <a class="btn btn-gold btn-sm" href="#reserve">Reserve<span class="long"> a table</span></a>
 </header>
 
 <main>
@@ -308,7 +308,8 @@
         <p class="rv small">Parties of 9 or more, private events and celebrations: <a href="mailto:Managers@agave-ember.com?subject=Large%20party%20at%20Agave%20%26%20Ember">managers@agave-ember.com</a></p>
       </div>
 
-      <form class="booking" id="booking" novalidate>
+      <noscript><p class="nojs-book">Online booking needs JavaScript. To reserve, email <a href="mailto:Managers@agave-ember.com?subject=Reservation%20request">managers@agave-ember.com</a> with your party size, date and time.</p></noscript>
+      <form class="booking" id="booking" method="post" action="#reserve" novalidate>
         <div class="booking-steps">
           <fieldset class="field">
             <legend>Guests</legend>
@@ -347,7 +348,7 @@
           </label>
           <label class="input">Allergies or requests<textarea name="notes" rows="2" placeholder="Gluten-free, high chair, a quiet table..."></textarea></label>
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="form-error" data-error role="alert" hidden></p>
+          <p class="form-error" id="booking-error" data-error role="alert" hidden></p>
           <button class="btn btn-gold btn-block" type="submit" data-submit>Send my request</button>
         </div>
 

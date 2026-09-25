@@ -221,6 +221,13 @@
   }
   function setChecked(container, btn) {
     $$('.chip', container).forEach(function (c) { c.setAttribute('aria-checked', c === btn ? 'true' : 'false'); });
+    rove(container);
+  }
+  // One tab stop per group: the checked chip (or the first one).
+  function rove(container) {
+    var list = $$('.chip:not(:disabled)', container);
+    var on = list.filter(function (c) { return c.getAttribute('aria-checked') === 'true'; })[0] || list[0];
+    list.forEach(function (c) { c.tabIndex = c === on ? 0 : -1; });
   }
   function radioKeys(container) {
     container.addEventListener('keydown', function (e) {
@@ -242,10 +249,12 @@
       state.party = n;
       $('[data-party-hint]').hidden = n !== 9;
       $('[data-submit]').disabled = n === 9;
+      clearError();
       updateSummary();
     });
     partyEl.appendChild(b);
   })(p);
+  rove(partyEl);
   radioKeys(partyEl);
 
   // Last seating: one hour before the kitchen (or the room) closes.
@@ -278,6 +287,7 @@
       b.addEventListener('click', function () { setChecked(timesEl, b); state.time = s.mins; updateSummary(); clearError(); });
       timesEl.appendChild(b);
     });
+    rove(timesEl);
     updateSummary();
   }
 
@@ -310,8 +320,14 @@
     if (!dateInput.value) return;
     var v = dateInput.value.split('-').map(Number);
     var day = dayFromOffset({ y: v[0], m: v[1], d: v[2] }, 0);
-    var match = $('.date-chip[data-iso="' + isoDate(day) + '"]', datesEl);
-    if (match) { match.click(); match.scrollIntoView({ block: 'nearest', inline: 'nearest' }); return; }
+    var iso = isoDate(day);
+    if (!v[0] || iso < dateInput.min || iso > dateInput.max) {
+      dateInput.value = '';
+      return showError('Choose a date between today and ' + longDate(dayFromOffset(today, 90)) + '.', dateInput);
+    }
+    clearError();
+    var match = $('.date-chip[data-iso="' + iso + '"]', datesEl);
+    if (match) { match.click(); dateInput.value = iso; match.scrollIntoView({ block: 'nearest', inline: 'nearest' }); return; }
     pickDay(day, null);
   });
 
@@ -351,10 +367,10 @@
   function clearError() { errorEl.hidden = true; errorEl.textContent = ''; }
   function showError(msg, field) {
     errorEl.textContent = msg; errorEl.hidden = false;
-    if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); }
+    if (field) { field.setAttribute('aria-invalid', 'true'); field.setAttribute('aria-describedby', 'booking-error'); field.focus(); }
   }
   $$('input, select, textarea', form).forEach(function (f) {
-    f.addEventListener('input', function () { f.removeAttribute('aria-invalid'); });
+    f.addEventListener('input', function () { f.removeAttribute('aria-invalid'); f.removeAttribute('aria-describedby'); });
   });
 
   function mailtoHref(data) {
@@ -378,8 +394,8 @@
     clearError();
     if (form.elements['botcheck'].checked) return;
     if (state.party === 9) return showError('For 9 or more, please email us and we’ll set up the room.');
-    if (!state.day) return showError('Choose a date.');
-    if (state.time === null) return showError('Choose a time.', $('.chip', timesEl));
+    if (!state.day || isoDate(state.day) < isoDate(today) || isoDate(state.day) > dateInput.max) return showError('Choose a date.');
+    if (state.time === null) { showError('Choose a time.'); var fc = $('.chip', timesEl); if (fc) fc.focus(); return; }
     var els = form.elements, name = els['name'], phone = els['phone'], email = els['email'];
     if (!name.value.trim()) return showError('Add the name for the reservation.', name);
     if (phone.value.replace(/\D/g, '').length < 10) return showError('Add a phone number we can reach you at.', phone);
@@ -451,11 +467,16 @@
     endM = endM % 1440;
     var end = endDay.y + pad(endDay.m) + pad(endDay.d) + 'T' + pad(Math.floor(endM / 60)) + pad(endM % 60) + '00';
     var ics = [
-      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Agave & Ember//Reservations//EN', 'BEGIN:VEVENT',
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Agave & Ember//Reservations//EN',
+      'BEGIN:VTIMEZONE', 'TZID:America/Chicago',
+      'BEGIN:DAYLIGHT', 'TZOFFSETFROM:-0600', 'TZOFFSETTO:-0500', 'TZNAME:CDT', 'DTSTART:19700308T020000', 'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU', 'END:DAYLIGHT',
+      'BEGIN:STANDARD', 'TZOFFSETFROM:-0500', 'TZOFFSETTO:-0600', 'TZNAME:CST', 'DTSTART:19701101T020000', 'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU', 'END:STANDARD',
+      'END:VTIMEZONE',
+      'BEGIN:VEVENT',
       'UID:' + Date.now() + '@agave-ember.com',
       'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z',
       'DTSTART;TZID=America/Chicago:' + start, 'DTEND;TZID=America/Chicago:' + end,
-      'SUMMARY:Dinner at Agave & Ember (requested)',
+      'SUMMARY:' + ((state.day.dow === 0 || state.day.dow === 6) && state.time < 720 ? 'Brunch' : 'Table') + ' at Agave & Ember (requested)',
       'LOCATION:' + CONFIG.address.replace(/,/g, '\\,'),
       'DESCRIPTION:Table for ' + state.party + '. Watch your email for confirmation.',
       'END:VEVENT', 'END:VCALENDAR'
