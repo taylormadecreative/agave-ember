@@ -10,7 +10,7 @@
     web3formsKey: '',
     email: 'Managers@agave-ember.com',
     tz: 'America/Chicago',
-    address: '960 W Exchange Pkwy, Suite 150, Allen, TX 75013'
+    address: '350 W. Exchange Pkwy #150, Allen, TX'
   };
 
   // Hours in minutes after midnight. Day index: 0 = Sunday.
