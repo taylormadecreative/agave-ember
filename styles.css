@@ -441,3 +441,5 @@ html:not(.js) .site-header { background: oklch(0.16 0.016 50 / 0.96); }
   .course-jump { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
   .course-jump a { flex: 0 0 auto; }
 }
+
+.site-header .btn { gap: 0; }
