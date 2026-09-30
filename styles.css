@@ -428,3 +428,16 @@ html:not(.js) .site-header { background: oklch(0.16 0.016 50 / 0.96); }
   .panel[hidden] { display: block !important; }
   .tabs { display: none; }
 }
+
+/* ---------- Real menu additions ---------- */
+.course .opts { grid-column: 1 / -1; margin: 4px 0 0; font: 600 .9375rem/1.5 var(--f-body); color: var(--ink); font-variant-numeric: tabular-nums; }
+.course.compact li { padding: 8px 0; }
+.course.compact .dish { font-size: 1.0625rem; }
+.menu-fine { margin: clamp(8px, 2vw, 20px) 0 0; padding-top: 20px; border-top: 1px solid oklch(0.70 0.12 72 / .45); font-size: .875rem; line-height: 1.55; color: var(--ink-soft); max-width: 90ch; }
+.course-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 clamp(28px, 3vw, 40px); }
+.course-jump a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid oklch(0.70 0.12 72 / .55); border-radius: 999px; font: 500 .9375rem/1 var(--f-body); color: var(--ink); text-decoration: none; transition: background-color .2s var(--ease), border-color .2s var(--ease); }
+.course-jump a:hover { background: var(--masa-2); border-color: var(--ember-deep); }
+@media (max-width: 860px) {
+  .course-jump { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .course-jump a { flex: 0 0 auto; }
+}

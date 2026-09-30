@@ -487,6 +487,14 @@
     document.body.appendChild(a); a.click(); a.remove();
   });
 
+  // A shared link to a brunch or bar section opens that tab first.
+  function openTabFor(id) {
+    var t = id && document.getElementById(id), panel = t && t.closest('[role="tabpanel"]');
+    if (panel && panel.hidden) selectTab(document.getElementById(panel.getAttribute('aria-labelledby')));
+  }
+  openTabFor(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { openTabFor(location.hash.slice(1)); });
+
   /* ---------- Land shared #links correctly once fonts settle ---------- */
   if (location.hash && document.fonts && document.fonts.ready) {
     document.fonts.ready.then(function () {
